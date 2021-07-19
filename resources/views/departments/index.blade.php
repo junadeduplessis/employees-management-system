@@ -4,7 +4,7 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">States</h1>
+        <h1 class="h3 mb-0 text-gray-800">Departments</h1>
     </div>
 
     <div class="card">
@@ -23,7 +23,7 @@
         <div class="card-header">
             <div class="row">
                 <div class="col">
-                    <form method="GET" action="{{ route('states.index') }}">
+                    <form method="GET" action="{{ route('departments.index') }}">
                         <div class="form-row align-items-cneter">
                             <div class="col">
                                 <input type="search" name="search" class="form-control mb-2" id="inlineFormInput"
@@ -36,7 +36,7 @@
                     </form>
                 </div>
                 <div>
-                    <a href="{{ route('states.create') }}" class="btn btn-primary mb-2">Create</a>
+                    <a href="{{ route('departments.create') }}" class="btn btn-primary mb-2">Create</a>
                 </div>
             </div>
         </div>
@@ -45,19 +45,17 @@
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Country ID</th>
                         <th scope="col">Name</th>
                         <th scope="col">Manage</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($states as $state)
+                    @foreach ($departments as $department)
                         <tr>
-                            <th scope="row">{{ $state->id }}</th>
-                            <td>{{ $state->country->country_code }}</td>
-                            <td>{{ $state->name }}</td>
+                            <th scope="row">{{ $department->id }}</th>
+                            <td>{{ $department->name }}</td>
                             <td>
-                                <a href="{{ route('states.edit', $state->id) }}" class="btn btn-success">Edit</a>
+                                <a href="{{ route('departments.edit', $department->id) }}" class="btn btn-success">Edit</a>
                             </td>
                         </tr>
                     @endforeach
